@@ -74,9 +74,9 @@ if (canvas) {
 
   function drawMarkers() {
     const markers = [
-      { x: 0.19, label: "COMMAND HIGH", color: "#d98a47" },
-      { x: 0.42, label: "50 ms WINDOW", color: "#138a83" },
-      { x: 0.72, label: "STABLE HIGH", color: "#f1d5a0" },
+      { x: 0.19, color: "#d98a47" },
+      { x: 0.42, color: "#138a83" },
+      { x: 0.72, color: "#f1d5a0" },
     ];
 
     for (const marker of markers) {
@@ -88,10 +88,6 @@ if (canvas) {
       ctx.lineTo(x, height * 0.86);
       ctx.stroke();
       ctx.globalAlpha = 1;
-
-      ctx.fillStyle = marker.color;
-      ctx.font = "700 11px ui-monospace, SFMono-Regular, Menlo, Consolas";
-      ctx.fillText(marker.label, x + 8, height * 0.2);
     }
   }
 
@@ -133,4 +129,3 @@ if (canvas) {
   render();
   window.addEventListener("resize", resize);
 }
-

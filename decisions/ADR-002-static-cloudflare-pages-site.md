@@ -65,5 +65,13 @@ curl --max-time 5 -I http://127.0.0.1:4173/assets/site.js
 git diff --check
 ```
 
-Computer Use browser verification was attempted, but macOS Accessibility and Screen Recording permissions were still pending.
+Safari visual verification was completed with Computer Use after macOS Accessibility and Screen Recording permissions were granted.
 
+Pages reviewed:
+
+- Landing page.
+- About page.
+- Documentation page.
+- Contributors page.
+
+The visual pass found that landing-page canvas marker labels competed with the hero headline and the first viewport did not show enough of the next section. The marker labels were removed and hero spacing/type scale were tightened so the branded first viewport remains clear while the next section is visible.
