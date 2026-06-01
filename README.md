@@ -4,6 +4,12 @@ Public website repository for FerrisOxide.
 
 This repository is currently in setup stage. No frontend framework, package manager, dependencies, deployment configuration, or CI workflow has been selected yet.
 
+GitHub remote:
+
+```text
+https://github.com/kota-wilson/ferrisoxide-site
+```
+
 ## Source Relationship
 
 FerrisOxide implementation facts come from the source repository:
@@ -48,4 +54,3 @@ git status --short
 ```
 
 After frontend tooling is approved and added, this section should include the site build command.
-

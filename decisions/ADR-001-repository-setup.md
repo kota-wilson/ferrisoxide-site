@@ -16,7 +16,7 @@ Create the website repository at:
 /Users/kota/Desktop/codexprojects/websitedev/projects/ferrisoxide-site
 ```
 
-Use the intended GitHub repository:
+Use the GitHub repository:
 
 ```text
 kota-wilson/ferrisoxide-site
@@ -58,3 +58,11 @@ Verify remote setup with:
 gh repo view kota-wilson/ferrisoxide-site --json nameWithOwner,url,visibility
 ```
 
+Remote setup verified:
+
+```text
+nameWithOwner: kota-wilson/ferrisoxide-site
+url: https://github.com/kota-wilson/ferrisoxide-site
+visibility: PUBLIC
+default branch: main
+```
