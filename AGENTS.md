@@ -13,7 +13,7 @@ It inherits the root website workspace instructions from:
 - Local repository path: `/Users/kota/Desktop/codexprojects/websitedev/projects/ferrisoxide-site`.
 - Intended GitHub repository: `kota-wilson/ferrisoxide-site`.
 - Purpose: public website and documentation surface for FerrisOxide.
-- Current stage: repository setup only.
+- Current stage: static website first pass.
 
 ## Source Of Truth
 
@@ -50,11 +50,18 @@ Then use the selected website role from:
 
 ## Verification
 
-Until frontend tooling exists, verify repository setup with:
+Until frontend tooling exists, verify the static site with:
+
+```text
+python3 -m http.server 4173
+```
+
+Then open `http://localhost:4173`.
+
+Also verify repository state with:
 
 ```text
 git status --short
 ```
 
 Once frontend tooling exists, add the project build command here and keep it current.
-

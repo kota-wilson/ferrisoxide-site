@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="FerrisOxide documentation overview covering workflow, reports, criteria, rule packages, examples, and project boundaries."
+    >
+    <title>Documentation | FerrisOxide</title>
+    <link rel="stylesheet" href="./assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-shell">
+        <a class="brand" href="./index.html" aria-label="FerrisOxide home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>FerrisOxide</span>
+        </a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+        </button>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="./about.html">About</a>
+          <a href="./docs.html" aria-current="page">Documentation</a>
+          <a href="./contributors.html">Contributors</a>
+          <a href="https://github.com/kota-wilson/ferrisoxide">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="shell">
+          <div>
+            <p class="eyebrow">Documentation map</p>
+            <h1>Understand the workflow before extending it.</h1>
+          </div>
+          <p class="page-hero-note">
+            This page summarizes the source documentation and points to the major
+            engineering artifacts in the FerrisOxide repository.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell split">
+          <div class="prose">
+            <h2>The core workflow.</h2>
+            <p>
+              FerrisOxide Signal currently implements a desktop analysis path from local
+              CSV waveform data to reviewable evidence. The workflow loads channels,
+              models waveforms, applies optional derived transforms, extracts
+              measurements, evaluates pass/fail criteria, and emits reports and visual
+              artifacts.
+            </p>
+            <p>
+              The embedded-facing pieces are boundaries and shared semantics, not a claim
+              that the desktop CLI is an RTOS application. Their purpose is to reduce the
+              chance that desktop and future runtime rule behavior drift apart.
+            </p>
+          </div>
+          <div class="code-panel" aria-label="FerrisOxide data flow">
+            <header>
+              <span>data-flow.txt</span>
+              <span>source-backed</span>
+            </header>
+            <pre><code>CSV waveform data
+  -> channel mapping
+  -> waveform model and metadata
+  -> optional derived transforms
+  -> reusable measurements
+  -> pass/fail criteria
+  -> text, JSON, SVG, and rule-package evidence</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="shell">
+          <div class="section-heading">
+            <h2>Read by topic.</h2>
+            <p>
+              These are the documentation areas that matter first for users and future
+              contributors.
+            </p>
+          </div>
+          <div class="doc-list">
+            <a class="doc-link" href="https://github.com/kota-wilson/ferrisoxide/blob/main/README.md">
+              <span>
+                <strong>Product guide</strong>
+                <span>What FerrisOxide does, current status, quick start, and repository map.</span>
+              </span>
+              <em>Open</em>
+            </a>
+            <a class="doc-link" href="https://github.com/kota-wilson/ferrisoxide/blob/main/docs/architecture.md">
+              <span>
+                <strong>Architecture</strong>
+                <span>Crate boundaries, workflow responsibilities, and evidence model.</span>
+              </span>
+              <em>Open</em>
+            </a>
+            <a class="doc-link" href="https://github.com/kota-wilson/ferrisoxide/blob/main/docs/criteria-dsl.md">
+              <span>
+                <strong>Criteria DSL</strong>
+                <span>Measurement-backed rule expressions for pass/fail criteria.</span>
+              </span>
+              <em>Open</em>
+            </a>
+            <a class="doc-link" href="https://github.com/kota-wilson/ferrisoxide/blob/main/docs/measurements.md">
+              <span>
+                <strong>Measurements</strong>
+                <span>Reusable extrema, transitions, pulse width, stable-state, transient, and rise/fall measurements.</span>
+              </span>
+              <em>Open</em>
+            </a>
+            <a class="doc-link" href="https://github.com/kota-wilson/ferrisoxide/blob/main/docs/rule-package-format.md">
+              <span>
+                <strong>Portable rule packages</strong>
+                <span>Rule schema, package artifacts, manifests, checksums, and validation report roles.</span>
+              </span>
+              <em>Open</em>
+            </a>
+            <a class="doc-link" href="https://github.com/kota-wilson/ferrisoxide/blob/main/docs/desktop-simulation-workflow.md">
+              <span>
+                <strong>Desktop simulation workflow</strong>
+                <span>Fixture-driven software simulation workflow over control and verification configs.</span>
+              </span>
+              <em>Open</em>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="examples">
+        <div class="shell">
+          <div class="section-heading">
+            <h2>Examples worth starting with.</h2>
+            <p>
+              These source-backed examples show how FerrisOxide thinks about signals,
+              rules, and evidence.
+            </p>
+          </div>
+          <div class="grid three">
+            <article class="card">
+              <h3>Heated actuator suite</h3>
+              <p>
+                Passing and failing CSVs, expected JSON reports, production control config,
+                test verification config, CLI smokes, and package export coverage.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Rule package examples</h3>
+              <p>
+                Parse-tested TOML and JSON rules, manifest expectations, checksum output,
+                and validation-report artifacts.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Known-answer validation</h3>
+              <p>
+                Waveforms and expected measurements for checking tolerance, timing, and
+                measurement behavior.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section dark">
+        <div class="shell split">
+          <div class="prose">
+            <h2>Cloudflare Pages fit.</h2>
+            <p>
+              This website is currently plain static HTML, CSS, and JavaScript. That makes
+              it compatible with Cloudflare Pages without a package install or build step.
+            </p>
+            <p>
+              Recommended initial Pages settings: connect the
+              <code>kota-wilson/ferrisoxide-site</code> repository, use the
+              <code>main</code> branch, leave the build command blank, and use
+              <code>/</code> as the output directory.
+            </p>
+          </div>
+          <div class="callout">
+            <p>
+              No Cloudflare config, DNS record, CI workflow, dependency lockfile, or
+              deployment token has been committed yet.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <strong>FerrisOxide</strong>
+          <p>Documentation-first signal validation.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="./index.html">Home</a>
+          <a href="./about.html">About</a>
+          <a href="./contributors.html">Contributors</a>
+          <a href="https://github.com/kota-wilson/ferrisoxide">Source</a>
+        </nav>
+      </div>
+    </footer>
+    <script src="./assets/site.js"></script>
+  </body>
+</html>

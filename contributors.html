@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Contributor guide for people interested in helping FerrisOxide with docs, tests, examples, validation evidence, and Rust implementation."
+    >
+    <title>Contributors | FerrisOxide</title>
+    <link rel="stylesheet" href="./assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-shell">
+        <a class="brand" href="./index.html" aria-label="FerrisOxide home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>FerrisOxide</span>
+        </a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+        </button>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="./about.html">About</a>
+          <a href="./docs.html">Documentation</a>
+          <a href="./contributors.html" aria-current="page">Contributors</a>
+          <a href="https://github.com/kota-wilson/ferrisoxide">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="shell">
+          <div>
+            <p class="eyebrow">Want to contribute?</p>
+            <h1>Help make waveform evidence easier to review.</h1>
+          </div>
+          <p class="page-hero-note">
+            FerrisOxide benefits from contributors who care about precise docs, reliable
+            fixtures, clear examples, Rust quality, and honest project boundaries.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell">
+          <div class="section-heading">
+            <h2>Good first contribution areas.</h2>
+            <p>
+              The project is documentation-first and evidence-heavy, so useful
+              contributions are not limited to writing Rust code.
+            </p>
+          </div>
+          <div class="grid three">
+            <article class="card">
+              <h3>Docs and examples</h3>
+              <p>
+                Improve explanations, add example walkthroughs, make reports easier to
+                understand, and keep source docs aligned with implemented behavior.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Validation fixtures</h3>
+              <p>
+                Add or refine software-only waveforms, expected measurements, edge cases,
+                and golden reports that make criteria behavior inspectable.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Rust implementation</h3>
+              <p>
+                Work on parser behavior, criteria semantics, report clarity, package
+                validation, or no_std-compatible boundaries after the issue scope is clear.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="shell split">
+          <div class="prose">
+            <h2>How to approach the project.</h2>
+            <p>
+              Start by reading the main README and the documentation map. Pay close
+              attention to what is in scope and what is explicitly not claimed.
+            </p>
+            <p>
+              The best contributions keep behavior reviewable: clear requirements,
+              focused implementation, tests or fixtures, and docs that explain the
+              evidence without overstating maturity.
+            </p>
+            <ol>
+              <li>Read the product guide and contributing notes.</li>
+              <li>Choose a small issue or documentation gap.</li>
+              <li>Keep changes focused and source-backed.</li>
+              <li>Run the relevant Cargo checks from the source repository instructions.</li>
+              <li>Include evidence and known limitations in the PR description.</li>
+            </ol>
+          </div>
+          <div class="code-panel" aria-label="Contributor mindset">
+            <header>
+              <span>contribution-checklist.txt</span>
+              <span>reviewable work</span>
+            </header>
+            <pre><code>state the requirement
+name the affected files
+add or update tests
+document evidence
+avoid unsupported claims
+leave clear follow-up notes</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell">
+          <div class="section-heading">
+            <h2>Contributor boundaries.</h2>
+            <p>
+              FerrisOxide is open to careful contributions, but some areas require fresh
+              requirements, architecture, dependency, security, and validation gates.
+            </p>
+          </div>
+          <div class="grid two">
+            <article class="card">
+              <h3>Welcome directions</h3>
+              <ul>
+                <li>Clearer documentation and examples.</li>
+                <li>More precise software validation fixtures.</li>
+                <li>Bug fixes with targeted tests.</li>
+                <li>Report and rule-package clarity improvements.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Needs a fresh gate</h3>
+              <ul>
+                <li>New third-party dependencies.</li>
+                <li>Live DAQ SDKs, HALs, or hardware integration.</li>
+                <li>Production RTOS runtime or certification-facing claims.</li>
+                <li>GUI, cloud, accounts, plugin runtime, or cryptographic signing.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section mint">
+        <div class="shell split">
+          <div class="prose">
+            <h2>Start from the source repository.</h2>
+            <p>
+              The active engineering work lives in <code>kota-wilson/ferrisoxide</code>.
+              Use the contributor, security, code of conduct, license, and README files
+              there as the authority for source-repository contributions.
+            </p>
+            <div class="section-actions">
+              <a class="button" href="https://github.com/kota-wilson/ferrisoxide">Open FerrisOxide on GitHub</a>
+              <a class="button light" href="https://github.com/kota-wilson/ferrisoxide/blob/main/CONTRIBUTING.md">Read CONTRIBUTING.md</a>
+            </div>
+          </div>
+          <div class="callout">
+            <p>
+              This website is a public presentation layer. Source code changes belong in
+              the FerrisOxide source repository workflow, not in the website repository.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <strong>FerrisOxide</strong>
+          <p>Contributions should make evidence clearer, not claims broader.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="./index.html">Home</a>
+          <a href="./about.html">About</a>
+          <a href="./docs.html">Docs</a>
+          <a href="https://github.com/kota-wilson/ferrisoxide">Source</a>
+        </nav>
+      </div>
+    </footer>
+    <script src="./assets/site.js"></script>
+  </body>
+</html>

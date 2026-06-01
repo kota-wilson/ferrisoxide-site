@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="FerrisOxide is a Rust-centered open-source workspace for engineering signal validation and auditable waveform evidence."
+    >
+    <title>FerrisOxide | Engineering signal validation</title>
+    <link rel="stylesheet" href="./assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-shell">
+        <a class="brand" href="./index.html" aria-label="FerrisOxide home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>FerrisOxide</span>
+        </a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+        </button>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="./about.html">About</a>
+          <a href="./docs.html">Documentation</a>
+          <a href="./contributors.html">Contributors</a>
+          <a href="https://github.com/kota-wilson/ferrisoxide">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <canvas class="hero-canvas" data-signal-canvas aria-hidden="true"></canvas>
+        <div class="hero-content">
+          <div>
+            <p class="eyebrow">Rust-centered signal validation</p>
+            <h1>Evidence for signals that need to be trusted.</h1>
+            <p class="hero-lede">
+              FerrisOxide turns CSV waveform data into auditable pass/fail evidence:
+              measurements, criteria, reports, plots, and portable rule-package artifacts
+              for engineering review.
+            </p>
+            <div class="hero-actions">
+              <a class="button" href="./docs.html">Explore the docs</a>
+              <a class="button secondary" href="./about.html">Understand the project</a>
+            </div>
+          </div>
+          <aside class="hero-panel" aria-label="FerrisOxide status summary">
+            <div class="signal-readout">
+              <span class="readout-label">Current product slice</span>
+              <p class="readout-main">FerrisOxide Signal</p>
+              <div class="readout-grid">
+                <div>
+                  <strong>CSV</strong>
+                  <span>local waveform input</span>
+                </div>
+                <div>
+                  <strong>TOML</strong>
+                  <span>reviewable criteria</span>
+                </div>
+                <div>
+                  <strong>JSON</strong>
+                  <span>machine evidence</span>
+                </div>
+                <div>
+                  <strong>SVG</strong>
+                  <span>visual evidence</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="shell">
+          <div class="section-heading">
+            <h2>Built for engineering review, not hand-wavy plots.</h2>
+            <p>
+              FerrisOxide is deliberately documentation-heavy because signal validation
+              needs repeatable criteria, preserved raw data, and evidence a reviewer can
+              inspect later.
+            </p>
+          </div>
+          <div class="metric-strip" aria-label="FerrisOxide capability highlights">
+            <div class="metric">
+              <strong>1</strong>
+              <span>same CSV and config produce repeatable reports</span>
+            </div>
+            <div class="metric">
+              <strong>7+</strong>
+              <span>criteria families for waveform evidence</span>
+            </div>
+            <div class="metric">
+              <strong>4</strong>
+              <span>evidence surfaces: text, JSON, SVG, rule packages</span>
+            </div>
+            <div class="metric">
+              <strong>0</strong>
+              <span>certification or live hardware claims</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell">
+          <div class="section-heading">
+            <h2>What it does today.</h2>
+            <p>
+              The implemented MVP focuses on local files, auditable criteria, and
+              software-only validation fixtures.
+            </p>
+          </div>
+          <div class="grid three">
+            <article class="card">
+              <h3>Waveform reconstruction</h3>
+              <p>
+                Load local CSV data, map time and signal channels, preserve raw samples,
+                and track metadata such as units, sample timing, lineage, and tolerance.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Criteria and measurements</h3>
+              <p>
+                Evaluate voltage ranges, state transitions, response latency, pulse width,
+                stable-state duration, transient events, and rise/fall time.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Reviewable evidence</h3>
+              <p>
+                Produce text and JSON reports, SVG plots, annotated evidence overlays,
+                portable rule packages, manifests, checksums, and qualification-style
+                software evidence reports.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section dark">
+        <div class="shell">
+          <div class="section-heading">
+            <h2>From captured signal to reviewable artifact.</h2>
+            <p>
+              The desktop workflow is a software evidence path. It does not claim live
+              DAQ, hardware control, certification, or production controller readiness.
+            </p>
+          </div>
+          <div class="flow" aria-label="FerrisOxide workflow">
+            <div class="flow-step">
+              <span>01</span>
+              <strong>CSV waveform data</strong>
+            </div>
+            <div class="flow-step">
+              <span>02</span>
+              <strong>Channel mapping</strong>
+            </div>
+            <div class="flow-step">
+              <span>03</span>
+              <strong>Measurements and criteria</strong>
+            </div>
+            <div class="flow-step">
+              <span>04</span>
+              <strong>Reports and plots</strong>
+            </div>
+            <div class="flow-step">
+              <span>05</span>
+              <strong>Rule package evidence</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section mint">
+        <div class="shell split">
+          <div class="prose">
+            <h2>A practical example: heated actuator response.</h2>
+            <p>
+              The repository includes a software-only heated actuator scenario. A command
+              signal goes high, feedback must respond within a fixed window, a stable high
+              interval must hold, transient lows are bounded, and the supply rail must stay
+              inside limits.
+            </p>
+            <p>
+              FerrisOxide makes those assumptions explicit in configuration and then
+              reports the measured value, required value, timestamp, sample index, channel,
+              and reason for each pass or fail.
+            </p>
+            <div class="section-actions">
+              <a class="button" href="./docs.html#examples">Read the example path</a>
+              <a class="button light" href="https://github.com/kota-wilson/ferrisoxide">Open the source repo</a>
+            </div>
+          </div>
+          <div class="code-panel" aria-label="Example criteria snippet">
+            <header>
+              <span>test-verification-config.toml</span>
+              <span>software evidence</span>
+            </header>
+            <pre><code>command goes high at 1.000 s
+feedback responds within 50 ms
+feedback remains stable for 500 ms
+transient low must stay below 1 ms
+supply rail stays inside 4.75 V..5.25 V</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell">
+          <div class="section-heading">
+            <h2>Know the boundaries before you build on it.</h2>
+            <p>
+              FerrisOxide is a validated MVP slice. It is not a finished commercial
+              product, certified test system, live DAQ integration, GUI, or production
+              controller runtime.
+            </p>
+          </div>
+          <div class="grid two">
+            <article class="card">
+              <h3>In scope</h3>
+              <ul>
+                <li>Local CSV input and TOML configuration.</li>
+                <li>Local text, JSON, SVG, and rule-package evidence.</li>
+                <li>Software-only validation fixtures and parity tests.</li>
+                <li>Rust libraries, CLI workflow, and no_std-compatible foundations.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Out of scope</h3>
+              <ul>
+                <li>Live DAQ vendor SDKs or hardware control.</li>
+                <li>Hardware-in-the-loop execution or production RTOS runtime.</li>
+                <li>Full GUI, cloud service, accounts, or multi-user workflow.</li>
+                <li>Certified aerospace validation or safety certification claims.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <strong>FerrisOxide</strong>
+          <p>Open-source engineering signal validation, presented with explicit boundaries.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="./about.html">About</a>
+          <a href="./docs.html">Docs</a>
+          <a href="./contributors.html">Contributors</a>
+          <a href="https://github.com/kota-wilson/ferrisoxide">Source</a>
+        </nav>
+      </div>
+    </footer>
+    <script src="./assets/site.js"></script>
+  </body>
+</html>
+

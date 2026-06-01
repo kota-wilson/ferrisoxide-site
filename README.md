@@ -2,7 +2,7 @@
 
 Public website repository for FerrisOxide.
 
-This repository is currently in setup stage. No frontend framework, package manager, dependencies, deployment configuration, or CI workflow has been selected yet.
+This repository currently uses a dependency-free static website. No frontend framework, package manager, deployment configuration, or CI workflow has been selected yet.
 
 GitHub remote:
 
@@ -28,13 +28,12 @@ That repository is read-only for website work. Website content may summarize or 
 - Keep dependencies minimal.
 - Verify builds before finalizing implementation changes.
 
-## Planned First Pages
+## Current Pages
 
-- Home.
-- Docs overview.
-- Current status and scope.
-- Examples or workflows.
-- Contributing.
+- `index.html`: modern landing page.
+- `about.html`: project purpose, naming, maturity, and boundaries.
+- `docs.html`: documentation map and source-backed examples.
+- `contributors.html`: contributor orientation and boundaries.
 
 ## Not Yet Added
 
@@ -47,10 +46,16 @@ That repository is read-only for website work. Website content may summarize or 
 
 ## Local Verification
 
-Repository setup can be checked with:
+Because the site is static, local verification can be done with:
+
+```text
+python3 -m http.server 4173
+```
+
+Then open `http://localhost:4173`.
+
+Repository state can be checked with:
 
 ```text
 git status --short
 ```
-
-After frontend tooling is approved and added, this section should include the site build command.
